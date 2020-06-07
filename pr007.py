@@ -1,7 +1,9 @@
 """
+
 By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
 
 What is the 10 001st prime number?
+
 """
 
 # we can use previous problems code to list the first 10001 primes then select this but this probably coud be optimized using other algorithms
