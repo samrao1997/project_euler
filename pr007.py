@@ -10,9 +10,9 @@ What is the 10 001st prime number?
 
 
 ## TO IMPLEMENT:
-##      -- 1 is not prime DONE
-##      -- All primes except 2 are odd DONE
-##      -- All primes greater than 3 can be written in the form 6k +- 1
+##      -- 1 is not prime                                                       DONE
+##      -- All primes except 2 are odd                                          DONE
+##      -- All primes greater than 3 can be written in the form 6k +- 1         
 ##      -- Any nuber n can have only one primmefactor greather than sqrt(n)
 
 def n_prime(n):
