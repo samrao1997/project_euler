@@ -30,7 +30,7 @@ What is the greatest product of four adjacent numbers in the same direction (up,
 """
 
 def find_largest_prod(grid):
-    return max(largest_vert(grid), largest_hor(grid), largest_diag(grid))
+    return max(largest_vert(grid), largest_hor(grid), largest_forward_diag(grid), largest_back_diag(grid))
 
 def largest_vert(grid):
     """
@@ -43,7 +43,7 @@ def largest_vert(grid):
             prod = grid[i][j] * grid[i+1][j] * grid[i+2][j] * grid[i+3][j]
             if prod > largest_prod:
                 largest_prod = prod
-    print(largest_prod)
+    # print(largest_prod)
     return largest_prod
 
 def largest_hor(grid):
@@ -57,12 +57,12 @@ def largest_hor(grid):
             prod = grid[i][j] * grid[i][j+1] * grid[i][j+2] * grid[i][j+3]
             if prod > largest_prod:
                 largest_prod = prod
-    print(largest_prod)
+    # print(largest_prod)
     return largest_prod
 
-def largest_diag(grid):
+def largest_forward_diag(grid):
     """
-    Given a grid (in 2D array form) returns the largest productof four numbers diag
+    Given a grid (in 2D array form) returns the largest productof four numbers forward diag
     """
     largest_prod = 0
 
@@ -71,7 +71,21 @@ def largest_diag(grid):
             prod = grid[i][j] * grid[i+1][j+1] * grid[i+2][j+2] * grid[i+3][j+3]
             if prod > largest_prod:
                 largest_prod = prod
-    print(largest_prod)
+    # print(largest_prod)
+    return largest_prod
+
+def largest_back_diag(grid):
+    """
+    Given a grid (in 2D array form) returns the largest productof four numbers backward diag
+    """
+    largest_prod = 0
+
+    for i in range(len(grid) - 3):
+        for j in range(3, len(grid[i])):
+            prod = grid[i][j] * grid[i+1][j-1] * grid[i+2][j-2] * grid[i+3][j-3]
+            if prod > largest_prod:
+                largest_prod = prod
+     # print(largest_prod)
     return largest_prod
 
 grid = """08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
