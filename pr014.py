@@ -24,24 +24,66 @@ def next_num(num):
         return 3*num + 1
 
 def steps_collatz(num):
-    i = 1
+    steps = 1
     while(num != 1):
         num = next_num(num)
-        i += 1
-    return i
+        steps += 1
+    return steps
 
 # print(steps_collatz(13))
 
 
-# This is very slow. Optimize!
+# This is very slow. Optimize! (with memory)
 def solution(size):
     num = 1
     while (steps_collatz(num) < size):
         num += 1
     return num
 
-size = 1000000
-print(solution(size))
+
+# size = 1000000
+# print(solution(size))
 
 # idea keep memory that stores the size of previous calculated sequence then just add
 
+# collatz_memo = {}
+
+
+            
+
+
+#time module for calculating execution time
+import time
+
+#time at the start of program execution
+start = time.time()
+
+num = 1
+limit = 1000000
+seq_list = []
+while num < limit:
+    sequence_num = 0
+    n = num
+    if n == 1:
+        sequence_num = 1
+    else:
+        while n != 1:
+            if n % 2 == 0:
+                n = n / 2
+                sequence_num += 1
+            else:
+                n = 3 * n + 1
+                sequence_num += 1
+
+        sequence_num += 1
+    seq_list.append(sequence_num)
+    num += 1
+
+k = seq_list.index(max(seq_list))
+print(k + 1)
+
+#time at the end of execution
+end = time.time()
+
+#printing the total time of execution
+print(end-start)
