@@ -19,6 +19,10 @@ def amicable_check(num):
 
     divisors_num = get_divisors(num)
     amicable_pair = sum(divisors_num)
+
+    if num == amicable_pair:
+        return False
+
     divisors_pair = get_divisors(amicable_pair)
 
     if num == sum(divisors_pair):
