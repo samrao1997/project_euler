@@ -12,15 +12,19 @@ How many different ways can £2 be made using any number of coins?
 
 def count(arr, m, n):
 
+    # sum is 0
     if n == 0:
         return 1
 
+    # sum is less than 0
     if n < 0:
         return 0
 
+    # we have no more numbers left but sum is above 0
     if m <= 0 and n >= 1:
         return 0
 
+    # doesnt
     return count(arr, m - 1, n) + count(arr, m, n - arr[m - 1])
 
 
