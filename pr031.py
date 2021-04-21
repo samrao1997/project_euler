@@ -24,7 +24,7 @@ def count(arr, m, n):
     if m <= 0 and n >= 1:
         return 0
 
-    # doesnt
+    # adds the sum of two set the set that used mth coin and the set that doesn't use the mth coin
     return count(arr, m - 1, n) + count(arr, m, n - arr[m - 1])
 
 
