@@ -41,15 +41,16 @@ def is_list_prime(n):
     return True
 
 
-truncs = []
-j = 11
-while len(truncs) < 11:
-    if is_list_prime(j):
-        truncs.append(j)
-        print(len(truncs))
-    j += 1
-    print(j)
+def sol():
+    truncs = []
+    j = 11
+    while len(truncs) < 11:
+        if is_list_prime(j):
+            truncs.append(j)
+            print(len(truncs))
+        j += 1
+        print(j)
 
-print(truncs)
-print(sum(truncs))
-print(f"In {time.time() - start} seconds")
+    print(truncs)
+    print(sum(truncs))
+    print(f"In {time.time() - start} seconds")
