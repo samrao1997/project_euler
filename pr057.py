@@ -1,6 +1,9 @@
 """
 In the first one-thousand expansions, how many fractions contain a numerator with more digits than the denominator?
 
+
+
+I had to some math
 """
 
 
